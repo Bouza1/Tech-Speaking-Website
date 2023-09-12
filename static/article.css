@@ -1,0 +1,39 @@
+.container-page{
+  margin-top:1rem;
+}
+
+.footer-container{
+  color:whitesmoke;
+  padding:0.3rem;
+}
+
+.footer-container input{
+  margin-top:0rem;
+}
+
+.img-fluid{
+  max-width:70%;
+  border:0.3rem solid black;
+}
+
+.hidden{
+  display:none;
+}
+
+#like-btn{
+  padding:0;
+}
+
+#like-score{
+  padding:0;
+  margin:0;
+}
+
+#dislike-btn{
+  padding:0;
+}
+
+#dislike-score{
+  padding:0;
+  margin:0;
+}

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+{% block extra_stryle %}<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row my-2 mx-2 bg-dark rounded">
+    <div class="col-12 p-3">
+      <div class="container rounded shadow">
+        <h1 class="display-4 font-weight-normal text-light p-3 border-bottom text-center">Technically Speaking</h1>
+        <p class="lead font-weight-normal text-light mb-2 text-center">From Gadgets to AI - Unravel the Tech Universe With Our Easy to Digest Articles</p>
+        <div class="row" id="card-row"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row p-3 mt-2 mx-2 mb-1 bg-dark align-items-center rounded d-flex">
+    <div class="col-xl-7 col-md-12">
+      <img class="img-fluid" src="{{ url_for('static', filename='front_image.webp') }}">
+    </div>
+    <div class="col-xl-5 col-md-12 my-auto bg-dark text-center">
+      <div class="container p-3 bg-light h-100">
+        <div class="text-dark d-flex flex-column">
+          <h1 class="display-4 font-weight-normal">Masters Of Tech</h1>
+          <p class="lead font-weight-normal mt-3 d-none d-md-block">Welcome to Technically Speaking, your one-stop destination for all your technology needs. We understand the frustration and inconvenience that can arise when your devices encounter technical issues. That's why our team of skilled technicians is here to provide top-notch repair services, offering swift solutions to get you back up and running in no time.</p>
+          <a href="{{ url_for('repair_page')}}">
+            <button class="btn btn-md btn-dark mb-3 book-btn mx-auto">Book A Repair</button>
+          </a>
+          <div class="row align-items-center">
+            <div class="col my-auto d-none d-md-block">
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#212529" class="bi bi-windows" viewBox="0 0 16 16">
+                <path d="M6.555 1.375 0 2.237v5.45h6.555V1.375zM0 13.795l6.555.933V8.313H0v5.482zm7.278-5.4.026 6.378L16 16V8.395H7.278zM16 0 7.33 1.244v6.414H16V0z"/>
+              </svg>
+            </div>
+            <div class="col my-auto d-none d-md-block">
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#212529" class="bi bi-apple" viewBox="0 0 16 16">
+                <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"/>
+                <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"/>
+              </svg>
+            </div>
+            <div class="col my-auto d-none d-md-block">
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#212529" class="bi bi-ubuntu" viewBox="0 0 16 16">
+                <path d="M2.273 9.53a2.273 2.273 0 1 0 0-4.546 2.273 2.273 0 0 0 0 4.547Zm9.467-4.984a2.273 2.273 0 1 0 0-4.546 2.273 2.273 0 0 0 0 4.546ZM7.4 13.108a5.535 5.535 0 0 1-3.775-2.88 3.273 3.273 0 0 1-1.944.24 7.4 7.4 0 0 0 5.328 4.465c.53.113 1.072.169 1.614.166a3.253 3.253 0 0 1-.666-1.9 5.639 5.639 0 0 1-.557-.091Zm3.828 2.285a2.273 2.273 0 1 0 0-4.546 2.273 2.273 0 0 0 0 4.546Zm3.163-3.108a7.436 7.436 0 0 0 .373-8.726 3.276 3.276 0 0 1-1.278 1.498 5.573 5.573 0 0 1-.183 5.535 3.26 3.26 0 0 1 1.088 1.693ZM2.098 3.998a3.28 3.28 0 0 1 1.897.486 5.544 5.544 0 0 1 4.464-2.388c.037-.67.277-1.313.69-1.843a7.472 7.472 0 0 0-7.051 3.745Z"/>
+              </svg>
+            </div>
+          </div>       
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container d-none d-lg-block">
+  <div class="row rounded my-1 p-2">
+    <div class="col-12">
+      <div class="cont">
+        <img class="img-fluid rounded shadow" src="{{ url_for('static', filename='graphic_card_banner.png') }}">
+        <div class="banner-cont">
+          <h2 class="display-4 font-weight-normal text-white ">Coming Soon!</h2>
+          <a href="#"><button id="btn-banner" class="btn w-100 btn-primary" disabled >Shop</button></a>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block jscript %}
+<script src="{{url_for('static', filename='home.js')}}"></script>
+{% endblock %}

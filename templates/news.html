@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}News{% endblock %}
+{% block extra_stryle %}<link rel="stylesheet" href="{{ url_for('static', filename='news.css') }}">{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row" id="content">
+  </div>
+  <div class="row mb-2">
+    <div class="col-12 d-flex align-items-center">
+      <button class="btn btn-md btn-outline-dark mx-auto" value=0 id="load-art-btn">Load More...</button>
+    </div>
+  </div>  
+</div>
+{% endblock %}
+
+{% block jscript %}
+<script src="{{url_for('static', filename='news.js')}}"></script>
+
+{% endblock %}
