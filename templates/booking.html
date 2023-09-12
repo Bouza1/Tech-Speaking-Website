@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+
+{% block title %}Repair{% endblock %}
+
+{% block extra_stryle %}<link rel="stylesheet" href="{{ url_for('static', filename='booking.css') }}"> {% endblock %}
+
+{% block content%}
+  <div class="page-container d-flex flex-column justify-content-evenly">
+    <div class="row justify-content-center my-2 mx-2">
+      <div class="col-sm-12 col-lg-8">
+        <div class="rounded text-center shadow-lg bg-dark p-3">
+          <p class="lead text-light d-none d-sm-block">Please fill out the form below to speak to a dedicated technician today.</p> 
+          <p class="mobile text-light d-block d-sm-none">Please fill out the form below to speak to a dedicated technician today.</p>
+          <div class="col-12">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped text-right progress-bar-animated bg-info" id="prog-bar" role="progressbar" style="width: 10%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row justify-content-center mb-2 mx-2">
+      <div class="col-sm-12 col-lg-8">
+        <div class="rounded text-center shadow-lg bg-dark p-3">
+          <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8"><h5 class="border-bottom lead text-light p-1">Details</h5></div>
+            <div class="col-2" id="col-inp1-btn">
+              <button type="button" class="btn border-0" value="0" id="group-1-btn" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-dash" viewBox="0 0 16 16">
+                  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="container" id="input-1">
+            <div class="input-group input-group mb-3">
+              <span class="input-group-text bg-white" id="name-checkbox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="red" class="bi bi-x" viewBox="0 0 16 16">
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </span>
+              <input type="text" class="form-control group-1 required" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="name_inp" placeholder="Name:">
+            </div>
+            <div class="input-group input-group mb-3">
+              <span class="input-group-text bg-white" id="tel-checkbox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="red" class="bi bi-x" viewBox="0 0 16 16">
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </span>
+              <input type="tel" class="form-control group-1 required" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="contact_number_inp" placeholder="Contact Number:">
+            </div>
+            <div class="input-group input-group mb-3">
+              <span class="input-group-text bg-white" id="email-checkbox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="red" class="bi bi-x" viewBox="0 0 16 16">
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </span>
+              <input type="email" class="form-control group-1 required" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="email_address_inp" placeholder="Email:">
+            </div>
+            <!-- <!-- <input type="tel" class="form-control group-1 my-2 required" id="contact_number_inp" placeholder="Contact Number:"> -->
+            <!-- <input type="email" class="form-control group-1 mt-2 required" id="email_address_inp" placeholder="Email:"> --> 
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row justify-content-center mb-2 mx-2">
+      <div class="col-sm-12 col-lg-8">
+        <div class="rounded text-center shadow-lg bg-dark p-3">
+          <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8"><h5 class="border-bottom lead text-light p-1">Device</h5></div>
+            <div class="col-2" id="col-inp2-btn">
+              <button type="button" class="btn btn border-0" value="1" id="group-2-btn" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-plus" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="container" id="input-2">
+            <select class="form-control my-3 group-2 required" id="device_type_inp" required>
+              <option value="" disabled selected hidden>Device Type:</option>
+              <option value="Desktop">Desktop</option>
+              <option value="Laptop">Laptop</option>
+              <option value="Phone">Phone</option>
+              <option value="Tablet">Tablet</option>
+            </select>
+            <div class="input-group input-group mb-3">
+              <span class="input-group-text bg-white" id="make-checkbox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="red" class="bi bi-x" viewBox="0 0 16 16">
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </span>
+              <input type="text" class="form-control group-2 required" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="make_inp" placeholder="Make:">
+            </div>
+            <div class="input-group input-group mb-3">
+              <span class="input-group-text bg-white" id="model-checkbox">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="red" class="bi bi-x" viewBox="0 0 16 16">
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </span>
+              <input type="text" class="form-control group-2 required" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="model_inp" placeholder="Model:">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row justify-content-center mb-2 mx-2">
+      <div class="col-sm-12 col-lg-8">
+        <div class="rounded text-center shadow-lg bg-dark p-3">
+          <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8"><h5 class="border-bottom lead text-light p-1">Issues</h5></div>
+            <div class="col-2" id="col-inp3-btn">
+              <button type="button" class="btn border-0" value="1" id="group-3-btn" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-plus" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="container" id="input-3">
+            <textarea class="form-control required group-3" id="issues_inp" rows="5" placeholder=""></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+     <div class="row justify-content-center mb-2 mx-2">
+      <div class="col-sm-12 col-lg-8">
+        <div class="rounded text-center shadow-lg bg-dark p-3">
+          <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8"><h5 class="border-bottom lead text-light p-1">Contact Preferences</h5></div>
+            <div class="col-2" id="col-inp2-btn">
+              <button type="button" class="btn border-0" value="1" id="group-4-btn" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-plus" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="container" id="input-4">
+            <div class="row rounded mt-2 m-1 p-1 bg-light">
+              <div class="col-4">
+                <label class="form-check-label text-black" for="email">Email</label><br>
+                <input class="form-check-input radio-btn" type="radio" value="email" id="email" name="method-pref">
+              </div>
+              <div class="col-4">
+                <label class="form-check-label text-black" for="text">Text</label><br>
+                <input class="form-check-input radio-btn" type="radio" value="text" id="text" name="method-pref">         
+              </div>
+              <div class="col-4 mb-1">
+                <label class="form-check-label text-black" for="phone">Phone</label><br>
+                <input class="form-check-input radio-btn" type="radio" value="phone" id="phone" name="method-pref">        
+              </div>
+              
+              <div class="col-1 mb-1"></div>
+              <div class="col-10 border-bottom mb-1"></div>
+              <div class="col-1 mb-1"></div>
+    
+              <div class="col-4 mt-1 hidden-phone">
+                <label class="form-check-label text-black" for="morning">Morning</label><br>
+                <input class="form-check-input radio-btn" value="morning" type="radio" id="morning" name="time-pref">
+              </div>
+              <div class="col-4 mt-1 hidden-phone">
+                <label class="form-check-label text-black" for="afternoon">Afternoon</label><br>
+                <input class="form-check-input radio-btn" value="afternoon" type="radio" id="afternoon" name="time-pref">         
+              </div>
+              <div class="col-4 mt-1 hidden-phone">
+                <label class="form-check-label text-black" for="evening">Evening</label><br>
+                <input class="form-check-input radio-btn" type="radio" value="evening" id="evening" name="time-pref">        
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mb-3 mx-2">
+      <button type="button" class="btn btn-dark shadow-lg submit-button" id="submit-btn" disabled >Submit</button>
+    </div>
+  </div>
+
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto">Repair Form</strong>
+      <small>Just Now</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body bg-white" id="toast-body">
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block jscript %}
+<script src="{{url_for('static', filename='booking.js')}}"></script>
+{% endblock %}
+
+

@@ -1,0 +1,37 @@
+.book-btn{
+  width:50%;
+}
+
+.cont{
+  position:relative;
+}
+
+.banner-cont{
+  position: absolute; 
+  bottom: 2rem; 
+  left: 2rem; 
+}
+
+.card{
+  box-shadow: 1rem 5px 5px black;
+}
+
+.card-btn{
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+#top-container{
+  margin-top:0.1rem;
+  height:25.8rem;
+  overflow:hidden;
+}
+
+.card-holder{
+  margin-top:0.2rem;
+}
+
+#card{
+  height:30rem;
+}
